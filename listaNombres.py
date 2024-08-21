@@ -29,13 +29,13 @@ def imprimir_nombres(lista):
         print(nombre)
         
 # Función para imprimir todas las listas
-def imprimir_listas(listaM, listaC, listaO):
+def imprimir_listas(listam, listac, listao):
     print("\nMagos grandiosos:")
-    imprimir_nombres(listaM)
+    imprimir_nombres(listam)
     print("\nCientíficos:")
-    imprimir_nombres(listaC)
+    imprimir_nombres(listac)
     print("\nOtros:")
-    imprimir_nombres(listaO)
+    imprimir_nombres(listao)
 
 # Imprimir nombres originales
 print("\nNombres originales:")
