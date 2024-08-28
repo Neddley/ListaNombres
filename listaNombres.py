@@ -4,55 +4,48 @@ nombres = [
     "Teller", "Einstein", "Pele", "Juanes"
 ]
 
-# Listas vacías para los grupos
-magos = []
-cientificos = []
-otros = []
-
-# Clasificar los nombres
-for nombre in nombres:
-    if nombre in ["Harry Houdini", "David Blaine", "Teller"]:
-        magos.append(nombre)
-    elif nombre in ["Newton", "Hawking", "Einstein"]:
-        cientificos.append(nombre)
-    else:
-        otros.append(nombre)
+# Clasificación de los nombres en grupos
+def clasificar_nombres(nombres):
+    magos = []
+    cientificos = []
+    otros = []
+    
+    for nombre in nombres:
+        if nombre in ["Harry Houdini", "David Blaine", "Teller"]:
+            magos.append(nombre)
+        elif nombre in ["Newton", "Hawking", "Einstein"]:
+            cientificos.append(nombre)
+        else:
+            otros.append(nombre)
+    
+    return magos, cientificos, otros
 
 # Función para hacer a los magos grandiosos
 def hacer_grandioso(magos):
-    for i in range(len(magos)):
-        magos[i] = "El gran " + magos[i]
+    return ["El gran " + mago for mago in magos]
 
-# Función para imprimir nombres
-def imprimir_nombres(lista):
+# Función para imprimir los nombres en una lista
+def imprimir_nombres(titulo, lista):
+    print(f"\n{titulo}:")
     for nombre in lista:
         print(nombre)
-        
-# Función para imprimir todas las listas
-def imprimir_listas(listam, listac, listao):
-    print("\nMagos grandiosos:")
-    imprimir_nombres(listam)
-    print("\nCientíficos:")
-    imprimir_nombres(listac)
-    print("\nOtros:")
-    imprimir_nombres(listao)
 
-# Imprimir nombres originales
-print("\nNombres originales:")
-imprimir_nombres(nombres)
+# Función principal para la ejecución del programa
+def main():
+    # Imprimir nombres originales
+    imprimir_nombres("Nombres originales", nombres)
+    
+    # Clasificar nombres
+    magos, cientificos, otros = clasificar_nombres(nombres)
+    
+    # Hacer grandiosos a los magos
+    magos = hacer_grandioso(magos)
+    
+    # Imprimir las listas finales
+    imprimir_nombres("Magos grandiosos", magos)
+    imprimir_nombres("Científicos", cientificos)
+    imprimir_nombres("Otros", otros)
 
-# Hacer grandiosos a los magos
-hacer_grandioso(magos)
-
-# Imprimir los nombres después de la modificación
-#print("\nMagos grandiosos:")
-#imprimir_nombres(magos)
-
-#print("\nCientíficos:")
-#imprimir_nombres(cientificos)
-
-#print("\nOtros:")
-#imprimir_nombres(otros)
-
-# Imprimir la lista de nombres final
-imprimir_listas(magos, cientificos, otros)
+# Ejecución del programa principal
+if __name__ == "__main__":
+    main()
